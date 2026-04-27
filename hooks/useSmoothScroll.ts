@@ -8,7 +8,7 @@ export function useSmoothScroll() {
     let frame = 0;
 
     const setup = async () => {
-      const LenisModule = await import("@studio-freight/lenis");
+      const LenisModule = await import("lenis");
       const Lenis = LenisModule.default;
       lenisInstance = new Lenis({
         duration: 1.18,
