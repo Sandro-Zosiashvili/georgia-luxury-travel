@@ -1,0 +1,28 @@
+.preloader {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  color: var(--white);
+  background: var(--forest);
+}
+
+.curtain {
+  background: linear-gradient(180deg, var(--forest), #062f1b);
+  border-right: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.mark {
+  position: absolute;
+  z-index: 2;
+  top: 50%;
+  left: 50%;
+  width: min(82vw, 520px);
+  color: var(--white);
+  font-family: var(--font-display), Georgia, serif;
+  font-size: clamp(2.5rem, 8vw, 6rem);
+  line-height: 0.9;
+  text-align: center;
+  transform: translate(-50%, -50%);
+}

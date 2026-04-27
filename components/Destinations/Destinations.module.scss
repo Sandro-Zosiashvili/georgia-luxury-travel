@@ -1,0 +1,100 @@
+.section {
+  width: var(--container);
+  margin: 120px auto 0;
+}
+
+.header {
+  max-width: 760px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin-top: 46px;
+}
+
+.card {
+  position: relative;
+  min-height: 430px;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 24px 60px rgba(17, 17, 17, 0.1);
+}
+
+.card:nth-child(2),
+.card:nth-child(5) {
+  transform: translateY(44px);
+}
+
+.card img {
+  object-fit: cover;
+  transition: transform 0.8s ease;
+}
+
+.card:hover img {
+  transform: scale(1.08);
+}
+
+.cardOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.06), rgba(0, 0, 0, 0.74));
+}
+
+.cardContent {
+  position: absolute;
+  right: 24px;
+  bottom: 24px;
+  left: 24px;
+  color: var(--white);
+}
+
+.cardContent span {
+  color: var(--gold);
+  font-size: 0.72rem;
+  font-weight: 900;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.cardContent h3 {
+  margin: 9px 0 10px;
+  font-family: var(--font-display), Georgia, serif;
+  font-size: 3rem;
+  font-weight: 600;
+}
+
+.cardContent p {
+  max-height: 0;
+  margin: 0;
+  overflow: hidden;
+  color: rgba(255, 255, 255, 0.82);
+  line-height: 1.7;
+  transition: max-height 0.45s ease;
+}
+
+.card:hover p {
+  max-height: 140px;
+}
+
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .card:nth-child(2),
+  .card:nth-child(5) {
+    transform: none;
+  }
+}
+
+@media (max-width: 620px) {
+  .section {
+    margin-top: 86px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}

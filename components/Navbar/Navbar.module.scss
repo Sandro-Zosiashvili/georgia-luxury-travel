@@ -1,0 +1,132 @@
+.navbar {
+  position: fixed;
+  z-index: 50;
+  top: 18px;
+  left: 50%;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  width: var(--container);
+  min-height: 72px;
+  padding: 12px 14px 12px 22px;
+  color: var(--white);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 18px 56px rgba(0, 0, 0, 0.08);
+  backdrop-filter: blur(20px);
+  transform: translateX(-50%);
+  transition: background 0.35s ease, color 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+}
+
+.scrolled {
+  color: var(--black);
+  border-color: rgba(17, 17, 17, 0.08);
+  background: rgba(255, 255, 255, 0.88);
+  box-shadow: 0 18px 46px rgba(17, 17, 17, 0.1);
+}
+
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 205px;
+}
+
+.logo span {
+  display: grid;
+  width: 42px;
+  height: 42px;
+  place-items: center;
+  color: var(--black);
+  border-radius: 50%;
+  background: var(--gold);
+  font-family: var(--font-display), Georgia, serif;
+  font-weight: 700;
+}
+
+.logo strong {
+  font-size: 0.92rem;
+  letter-spacing: 0.02em;
+}
+
+.links {
+  display: flex;
+  justify-content: center;
+  gap: clamp(16px, 2vw, 30px);
+  font-size: 0.82rem;
+  font-weight: 800;
+}
+
+.links a {
+  opacity: 0.86;
+  transition: color 0.25s ease, opacity 0.25s ease;
+}
+
+.links a:hover {
+  color: var(--gold);
+  opacity: 1;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.menu {
+  display: none;
+  width: 44px;
+  height: 44px;
+  border: 1px solid currentColor;
+  border-radius: 50%;
+  color: inherit;
+  background: transparent;
+}
+
+@media (max-width: 1040px) {
+  .links {
+    position: absolute;
+    top: calc(100% + 12px);
+    right: 0;
+    left: 0;
+    display: none;
+    flex-direction: column;
+    padding: 22px;
+    color: var(--black);
+    border: 1px solid var(--line);
+    border-radius: 24px;
+    background: rgba(255, 255, 255, 0.96);
+    box-shadow: var(--shadow);
+  }
+
+  .links.open {
+    display: flex;
+  }
+
+  .menu {
+    display: grid;
+    place-items: center;
+  }
+}
+
+@media (max-width: 620px) {
+  .navbar {
+    top: 12px;
+    min-height: 64px;
+    padding: 10px 10px 10px 14px;
+  }
+
+  .logo {
+    min-width: auto;
+  }
+
+  .logo strong {
+    display: none;
+  }
+
+  .actions a {
+    display: none;
+  }
+}

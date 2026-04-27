@@ -1,0 +1,60 @@
+.button {
+  position: relative;
+  isolation: isolate;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 0 24px;
+  overflow: hidden;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: border-color 0.3s ease, color 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.button::before {
+  position: absolute;
+  inset: auto 14px 8px;
+  z-index: -1;
+  height: 1px;
+  content: "";
+  background: currentColor;
+  opacity: 0;
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.button:hover::before {
+  opacity: 0.42;
+  transform: scaleX(1);
+}
+
+.dark {
+  color: var(--white);
+  background: var(--forest);
+  box-shadow: 0 18px 40px rgba(0, 75, 35, 0.22);
+}
+
+.light {
+  color: var(--white);
+  border-color: rgba(255, 255, 255, 0.44);
+  background: rgba(255, 255, 255, 0.09);
+  backdrop-filter: blur(16px);
+}
+
+.gold {
+  color: var(--black);
+  background: var(--gold);
+  box-shadow: 0 18px 42px rgba(212, 175, 55, 0.24);
+}
+
+@media (max-width: 560px) {
+  .button {
+    width: 100%;
+  }
+}
